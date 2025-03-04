@@ -165,6 +165,9 @@ Se ha aplicado un desplazamiento en la frecuencia de la señal, lo que genera un
 ### Cálculo de parametros para otra respuesta en frecuencia
 ![Respuesta en frecuencia de una señal triangular](Triang.jpg)
 
+Para calcular el piso de ruido normalizado a la frecuencia portadora, primero se estima una aproximación del nivel de ruido en el espectro, que en este caso fue de -115 dBm. Una vez obtenido el nivel de ruido, se normaliza a 1 Hz. 
+$P_{\text{noise normalizado}} = P_{\text{noise}} - 10 \cdot \log_{10}(RBW)$
+
 #### FALTA POTENCIA, PISO DE RUIDO Y SNR para la seno y triangular
 
 Se realizó un análisis del espectro de señales FM utilizando el analizador de espectros. Se conectó una antena adecuada a la entrada del analizador para ver señales en el rango de 88 MHz a 108 MHz. Se midieron la frecuencia central, el ancho de banda y la potencia de transmisión de dos estaciones diferente. También se analizó la variación en la respuesta en frecuencia del canal.
