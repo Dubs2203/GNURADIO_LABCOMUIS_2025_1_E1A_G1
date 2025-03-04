@@ -1,28 +1,19 @@
 # Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
 
-Utilice esta [plantilla](#integrantes) para presentar sus informes de laboratorio. 
 
-Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#ejemplos-usando-markdown)
 
-### Importante
-
-- En caso de utilizar herramientas de Inteligencia Artificial para asistencia en la redacción, análisis o cualquier otra tarea, de debe especificar en la sección de **Declaración de Originalidad y Responsabilidad** aclarando el alcance y propósito de su uso.
-- Cualquier omisión en la declaración del uso de IA o la presentación de contenido plagiado será penalizado con nota de 0.0 y reporte a la coordinación del programa.
-- Si emplea referencias disponibles en línea, agregue los hipervínculos respectivos.  
-
----
-# Práctica 1: TÍTULO PRÁCTICA
+# Práctica 1: GNURADIO para el procesamiento de señales - Mediciones de potencia y frecuencia
 
 ### Integrantes
-- **PRIMER INTEGRANTE** - Código
-- **SEGUNDO INTEGRANTE** - Código
+- **DUBAN YESID CORTÉS TABARES** - 2214644
+- **Elkin** - Código
 
 Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones  
 Universidad Industrial de Santander
 
 ### Fecha
-31 de diciembre de 2030
+4 de marzo de 2025
 
 ---
 
@@ -37,29 +28,123 @@ Uso de IA: [Indicar si se usó IA y para qué aspectos específicos, por ejemplo
 ## Contenido
 
 ### Resumen
-Descripción en no más de 150 palabras del contenido de la práctica. Debe ser conciso y brindar una idea clara sobre el trabajo realizado y sus conclusiones.
+En esta práctica, se realizaron mediciones de potencia y frecuencia utilizando herramientas de radio definido por software (SDR) y equipos de laboratorio como el USRP 2920, el osciloscopio R&S RTB2004 y el analizador de espectros R&S FPC1000.
 
-**Palabras clave:** de 2 a 5 palabras clave. 
+Se comenzó con la revisión de especificaciones y configuración de los equipos. Luego, se generaron y analizaron señales en GNU Radio para comprender su comportamiento en los dominios del tiempo y la frecuencia. Posteriormente, se transmitieron señales con el USRP 2920 y se midieron parámetros clave como potencia, ancho de banda y relación señal a ruido (SNR) utilizando el analizador de espectros y el osciloscopio.
+
+Finalmente, se compararon los resultados obtenidos en simulación y experimentación, evaluando la influencia del ruido y la configuración de los equipos en la calidad de la señal, además de analizar los cambios observados en las señales de tiempo - frecuencia al variar sus parámetros en cada una.
+
+**Palabras clave:** Frecuencia, potencia, ruido, atenuación, calidad de la señal
 
 ### Introducción
-Cada práctica contará con preguntas orientadoras para la elaboración de la introducción. Por ejemplo: 
-- ¿Qué tan importante es la teoría de muestreo en el procesamiento de señales?
-- ¿Cuáles son los principales potenciales de GNURADIO en el laboratorio de comunicaciones?
-- ¿Qué pasa cuando se alcanza el límite de Nyquist?
-- ¿Qué tan alta debe ser la relación entre la frecuencia de muestreo y la frecuencia de la señal para visualizar la señal correctamente?
-- ¿Cuándo es importante interpolar una señal?
-- ¿Cuándo es importante diezmar una señal?
-- ¿Qué pasa cuando se asigna una frecuencia de muestreo inadecuada?
+
+El procesamiento de señales en el ambito de las telecomunicaciones es una pieza clave en los sistemas de comunicación modernos, en dónde la correcta selección de la frecuencia de muestreo y el uso correcto de herramientas (En este caso GNURadio) puede marcar la diferencia entre una señal legible y una completamente distorionada. En esta práctica se experimentará con estos conceptos. A través de la simulación y medición de señales se logrará entender el impacto del límite de Nyquist. 
+
+En un laboratorio de comunicaciones, herramientas como GNU Radio ofrecen un entorno flexible para experimentar con señales en tiempo real. Sin embargo, ¿cuáles son sus principales ventajas en comparación con otros sistemas? ¿Qué ocurre cuando se asigna una frecuencia de muestreo inadecuada? Estas cuestiones serán abordadas a lo largo de la práctica, permitiendo una comprensión más profunda del muestreo y su papel en la transmisión y procesamiento de señales digitales.
+
 
 ### Procedimiento
-Debe basarse en las acciones efectivamente realizadas durante el laboratorio, describiendo los procesos realizados y los resultados obtenidos. Para cada práctica se pueden brindar preguntas orientadoras o pasos a seguir para establecer lo que se espera lograr/estudiar/analizar/obtener/comparar. Por ejemplo:
-- Describa los procesos realizados en el laboratorio  y los resultados obtenidos.
-- ¿Cómo se alcanza el límite de Nyquist y que pasa cuando se disminuye de este?
-- ¿Por qué al interpolar una señal en GNURADIO su frecuencia disminuye?
-- ¿Por qué al diezmar una señal en GNURADIO su frecuencia aumenta?
-- ¿Cómo se puede determinar la frecuencia máxima de una señal desde lo experimental?
-- ¿Qué le sucede a una señal de audio cuando no se respeta el teorema de Nyquist?
-- Describa las funciones logradas con el Ecualizador desarrollado con GNURadio.
+
+## Actividad 1: Revisión de Especificaciones de los Equipos
+
+#### USRP -2920 
+Es un transceptor de RF ajustable con un convertidor analogico-digital de alta 
+velocidad y un convertidor digital-analogico para la transmision de señales de 
+banda base. TIene aplicaciones en emisión FM, seguridad pública, entre otras. 
+
+Especificaciones: 
+Rango de frecuencias (Transmisor y receptor): 50MHz to 2.2GHZ
+
+Máxima potencia de salida:  
+
+50mW to 100mW (17dBm to 20 dBm) entre 50MHz y 1.2GHZ. 
+
+30mW to 70mW (15dBm to 18 dBm) entre 1.2GHz y 2.2GHZ. 
+
+Rango de ganancia: 0dB to 31dB 
+
+Frecuencia de paso: <1kHz 
+
+Potencia: DE 12 a 15W (Máximo 18W)
+
+#### Osciloscopio R&S RTB2004 
+
+Dispositivo de medición de alta calidad diseñado para ofrecer precisión, 
+visualización y herramientas de control para el manejo de señales electrónicas. 
+
+Especificaciones: 
+
+Ancho de banda: 70MHz to 300MHz 
+
+Número de canales: 4 
+
+Freq. Muestreo:  1.25GSa/s por canal y 2X2.5 GSa/s intercalado (Usando dos 
+canales) 
+
+Profundidad de memoria: 10Mpts por canal y 2x20Mpts intercalado. 
+
+Rango de voltaje: El RTB2004 tiene un rango de entrada típico de ±50 V (en modo 
+diferencial). 
+
+#### Analizador de Espectros R&S FPC1000: 
+
+Herramienta utilizada para el análisis y localización de fuentes de perturbaciones durante 
+el desarrollo y tratamiento de señales. Permite visualizar en una pantalla las componentes 
+espectrales pudiendo ser ésta cualquier tipo de ondas eléctricas, acústicas u ópticas. 
+
+Especificaciones: 
+
+Rango de frecuencias: 5kHz a 1GHz 
+
+Nivel de ruido promedio visualizado: ± 1,5 % de escala completa 
+
+Incertidumbre absoluta de frecuencia (De 20° a 30°c): <0.3dB 
+
+Incertidumbre de respuesta en frecuencia (de +20°C a +30°C): <1dB 
+
+Ancho de banda de resolución de hasta 1Hz
+
+#### Medición de piso de ruido normalizado:
+
+## Actividad 2: Simulación de Señales en GNU Radio
+# **Actividad 2: Simulación de Señales en GNU Radio**
+
+## **Objetivo**  
+Generar y analizar señales en GNU Radio para entender cómo se comportan diferentes formas de onda en los dominios del tiempo y la frecuencia.  
+
+## **Evidencias**  
+A continuación, se presentan capturas de pantalla de las señales analizadas:
+
+### **1. Señal Original (Onda Triangular)**  
+Se observa la señal original antes de aplicar modificaciones.  
+![Señal original - Onda triangular](Original.png)  
+
+### **2. Configuración del Flujograma**  
+Se muestra la señal, luego de realizar todos los cambios.  
+![Configuración del Flujograma](Config_Flujo.png)  
+
+### **3. Nueva Señal Generada (Onda Senoidal)**  
+Tras modificar los parámetros iniciales, se genera una onda senoidal, la cual presenta una transición más suave en comparación con la onda triangular.  
+![Nueva señal generada - Onda seno](Señal_gen.png)  
+
+### **4. Cambio en la Amplitud**  
+Se incrementa la amplitud de la onda senoidal, lo que hace que los valores máximos y mínimos sean más pronunciados, aumentando su energía.  
+![Cambio en amplitud](Camp.png)  
+
+### **5. Cambio en la Frecuencia**  
+Al aumentar la frecuencia, la señal oscila más rápido en el mismo intervalo de tiempo, lo que se traduce en una mayor cantidad de ciclos dentro de la misma ventana de observación.  
+![Cambio en frecuencia](Cfrec.png)  
+
+### **6. Cambio en el Offset**  
+Se agrega un desplazamiento, lo que provoca un corrimiento espectral de la señal sin alterar su forma en el dominio del tiempo.  
+![Cambio en offset de frecuencia](Coffset.png)  
+
+### **7. Resultado Final - Configuración de la Señal Senoidal**  
+Configuración final de la señal senoidal después de todas las modificaciones. Se observa cómo los cambios aplicados afectan la señal en los dominios del tiempo y la frecuencia.  
+![Configuración final - Onda seno](Config_seno.png) 
+
+
+## Actividad 3: Transmisión y Medición de Señales con el USRP 2920
 
 ### Conclusiones
 Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
