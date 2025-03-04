@@ -163,9 +163,9 @@ Se ha aplicado un desplazamiento en la frecuencia de la señal, lo que genera un
 ![Cambio en offset de frecuencia](Freqoffset.jpeg)  
 
 ### Cálculo de parametros para otra respuesta en frecuencia
-![Respuesta en frecuencia de una señal triangular](ImagenSNR2.jpeg)
+![Respuesta en frecuencia de una señal triangular](Triang.jpg)
 
-#### FALTA POTENCIA, PISO DE RUIDO Y SNR
+#### FALTA POTENCIA, PISO DE RUIDO Y SNR para la seno y triangular
 
 Se realizó un análisis del espectro de señales FM utilizando el analizador de espectros. Se conectó una antena adecuada a la entrada del analizador para ver señales en el rango de 88 MHz a 108 MHz. Se midieron la frecuencia central, el ancho de banda y la potencia de transmisión de dos estaciones diferente. También se analizó la variación en la respuesta en frecuencia del canal.
 
@@ -190,7 +190,11 @@ Se realizó un análisis del espectro de señales FM utilizando el analizador de
 - **Ancho de banda:**  
 - **Relación señal a ruido (SNR):**  
 
-### Conclusiones
+###  Medición con el osciloscopio
+
+
+
+# Conclusiones
 Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
 
 ### Referencias
