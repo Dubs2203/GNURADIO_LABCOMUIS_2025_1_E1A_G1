@@ -146,6 +146,31 @@ Configuración final de la señal senoidal después de todas las modificaciones.
 
 ## Actividad 3: Transmisión y Medición de Señales con el USRP 2920
 
+### **1. Señal Original**  
+Se observa la señal original antes de aplicar modificaciones.  
+![Señal original](Freqoriginal.jpeg)  
+
+### **2. Cambio en la Amplitud**  
+Se ha modificado la amplitud de la señal, lo que afecta la potencia de la misma en el espectro.  
+![Cambio en amplitud](Freqamp.jpeg)  
+
+### **3. Cambio en la Frecuencia y Fase**  
+El cambio en la fase de la señal no es visible en el dominio de la frecuencia, ya que el espectro muestra solo la magnitud. Sin embargo, una variación en la fase podría afectar la coherencia con otras señales, mientras que en la frecuencia podemos observar cómo los picos de la señal senoidal se corren hacia la freq seleccionada  
+![Cambio en frecuencia](Freqfreq.jpeg)  
+
+### **4. Cambio en el Offset de Frecuencia**  
+Se ha aplicado un desplazamiento en la frecuencia de la señal, lo que genera un cambio en la posición de los picos espectrales.  
+![Cambio en offset de frecuencia](Freqoffset.jpeg)  
+
+### Cálculo de parametros para otra respuesta en frecuencia
+![Respuesta en frecuencia de una señal triangular](ImagenSNR2.jpeg)
+
+#### FALTA POTENCIA, PISO DE RUIDO Y SNR
+
+Se realizó un análisis del espectro de señales FM utilizando el analizador de espectros. Se conectó una antena adecuada a la entrada del analizador para ver señales en el rango de 88 MHz a 108 MHz. Se midieron la frecuencia central, el ancho de banda y la potencia de transmisión de dos estaciones diferente. También se analizó la variación en la respuesta en frecuencia del canal.
+
+
+
 ### Conclusiones
 Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
 
