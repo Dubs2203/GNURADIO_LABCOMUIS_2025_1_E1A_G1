@@ -107,7 +107,7 @@ Ancho de banda de resolución de hasta 1Hz
 #### Medición de piso de ruido normalizado:
 
 ## Actividad 2: Simulación de Señales en GNU Radio
-# **Actividad 2: Simulación de Señales en GNU Radio**
+
 
 ## **Objetivo**  
 Generar y analizar señales en GNU Radio para entender cómo se comportan diferentes formas de onda en los dominios del tiempo y la frecuencia.  
@@ -169,7 +169,26 @@ Se ha aplicado un desplazamiento en la frecuencia de la señal, lo que genera un
 
 Se realizó un análisis del espectro de señales FM utilizando el analizador de espectros. Se conectó una antena adecuada a la entrada del analizador para ver señales en el rango de 88 MHz a 108 MHz. Se midieron la frecuencia central, el ancho de banda y la potencia de transmisión de dos estaciones diferente. También se analizó la variación en la respuesta en frecuencia del canal.
 
+### **Captura de señal en 96.7 MHz**  
+![Señal en 96.7 MHz](FM917.jpg)  
 
+- **Potencia de transmisión:**  
+- **Ancho de banda:**  
+- **Relación señal a ruido (SNR):**  
+
+### **Captura de señal en 96.9 MHz (Instante 1)**  
+![Señal en 96.9 MHz - Instante 1](FM969.jpg)  
+
+- **Potencia de transmisión:**  
+- **Ancho de banda:**  
+- **Relación señal a ruido (SNR):**  
+
+### **Captura de señal en 96.9 MHz (Instante 2)**  
+![Señal en 96.9 MHz - Instante 2](FM9692.jpg)  
+
+- **Potencia de transmisión:**  
+- **Ancho de banda:**  
+- **Relación señal a ruido (SNR):**  
 
 ### Conclusiones
 Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
