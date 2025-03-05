@@ -165,19 +165,31 @@ Se ha aplicado un desplazamiento en la frecuencia de la señal, lo que genera un
 ### Cálculo de parametros para otra respuesta en frecuencia
 ![Respuesta en frecuencia de una señal triangular](Triang.jpg)
 
+#### -Piso de ruido normalizado
 Para calcular el piso de ruido normalizado a la frecuencia portadora, primero se estima una aproximación del nivel de ruido en el espectro, que en este caso fue de -115 dBm. Una vez obtenido el nivel de ruido, se normaliza a 1 Hz utilizando un ancho de banda de resolución (RBW) de 300 Hz.
 
 $P_{\text{ruido normalizado}} = P_{\text{noise}} - 10 \cdot \log_{10}(RBW)$
 
-$P_{\text{ruido normalizado}} = -115 - 24.77 \approx -139.77 \, \text{dBm/Hz}$
+$P_{\text{ruido normalizado}} = -115 - 24.77 \approx -139.77 \ \text{[dBm/Hz]}$
 
 Ahora, teniendo el ruido normalizado, se procede a calcular el piso de ruido normalizado, para lo cual se utiliza una potencia portadora de -70 dBm.
 
 $L(f) = P_{\text{portadora}} - P_{\text{ruido normalizado}}$
 
-$L(f) = -70 - (-139.77) = 69.77 \, \text{dBc/Hz}$
+$L(f) = -70 - (-139.77) = 69.77 \ \text{[dBc/Hz]}$
 
-#### FALTA POTENCIA, PISO DE RUIDO Y SNR para la seno y triangular
+#### -Potencia de la señal
+Para el cálculo de la potencia, se observa que en el espectro el valor más alto del pico es de -70 dBm.
+
+$P(W) = 10^{\frac{P(\text{dBm}) - 30}{10}}$
+
+$P(W) = 10^{\frac{-70 - 30}{10}} = 10^{\frac{-100}{10}} = 10 \ \text{[nW]}$
+
+#### -Ancho de banda
+Para determinar el ancho de banda, se miden las frecuencias $f_{\text{max}}$ y $f_{\text{min}}$ que delimitan el pico de la señal, y a través de una resta se obtiene el ancho de banda. En este caso, $f_{\text{min}}$ tiene un valor de 49.999 MHz y $f_{\text{max}}$ un valor de 50.001 MHz, por lo que el ancho de banda corresponde a 2 kHz.
+
+Replicando los calculos anteriores pero ahora aplicados para nuestra señal seno tenemos los siguientes resulados
+
 
 Se realizó un análisis del espectro de señales FM utilizando el analizador de espectros. Se conectó una antena adecuada a la entrada del analizador para ver señales en el rango de 88 MHz a 108 MHz. Se midieron la frecuencia central, el ancho de banda y la potencia de transmisión de dos estaciones diferente. También se analizó la variación en la respuesta en frecuencia del canal.
 
