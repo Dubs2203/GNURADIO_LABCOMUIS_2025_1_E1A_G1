@@ -168,7 +168,7 @@ Se ha aplicado un desplazamiento en la frecuencia de la señal, lo que genera un
 #### -Piso de ruido normalizado
 Para calcular el piso de ruido normalizado a la frecuencia portadora, primero se estima una aproximación del nivel de ruido en el espectro, que en este caso fue de -115 dBm. Una vez obtenido el nivel de ruido, se normaliza a 1 Hz utilizando un ancho de banda de resolución (RBW) de 300 Hz.
 
-$P_{\text{ruido normalizado}} = P_{\text{noise}} - 10 \cdot \log_{10}(RBW)$
+$P_{\text{ruido normalizado}} = P_{\text{ruido}} - 10 \cdot \log_{10}(RBW)$
 
 $P_{\text{ruido normalizado}} = -115 - 24.77 \approx -139.77 \ \text{[dBm/Hz]}$
 
@@ -183,28 +183,35 @@ Para el cálculo de la potencia, se observa que en el espectro el valor más alt
 
 $P(W) = 10^{\frac{P(\text{dBm}) - 30}{10}}$
 
-$P(W) = 10^{\frac{-70 - 30}{10}} = 10^{\frac{-100}{10}} = 10 \ \text{[nW]}$
+$P(W) = 10^{\frac{-70 - 30}{10}} = 10^{\frac{-100}{10}} = 0.1 \ \text{[nW]}$
 
 #### -Ancho de banda
 Para determinar el ancho de banda, se miden las frecuencias $f_{\text{max}}$ y $f_{\text{min}}$ que delimitan el pico de la señal, y a través de una resta se obtiene el ancho de banda. En este caso, $f_{\text{min}}$ tiene un valor de 49.999 MHz y $f_{\text{max}}$ un valor de 50.001 MHz, por lo que el ancho de banda corresponde a 2 kHz.
 
-Replicando los calculos anteriores pero ahora aplicados para nuestra señal seno tenemos los siguientes resulados
+Replicando los calculos anteriores pero ahora aplicados para nuestra señal seno tenemos los siguientes resulados:
 
+$P_{\text{ruido normalizado}} = -134.77 \ \text{[dBm/Hz]}$
+
+$L(f) = 74.77 \ \text{[dBc/Hz]}$
+
+$P(W) = 1 \ \text{[nW]}$
+
+${\text{Ancho de banda}} = 2 \ \text{kHz}$
 
 Se realizó un análisis del espectro de señales FM utilizando el analizador de espectros. Se conectó una antena adecuada a la entrada del analizador para ver señales en el rango de 88 MHz a 108 MHz. Se midieron la frecuencia central, el ancho de banda y la potencia de transmisión de dos estaciones diferente. También se analizó la variación en la respuesta en frecuencia del canal.
 
 ### **Captura de señal en 96.7 MHz**  
-![Señal en 96.7 MHz](FM917.jpg)  
+![Señal en 91.7 MHz](FM917.jpg)  
 
 - **Potencia de transmisión:**  
-- **Ancho de banda:**  
+- **Ancho de banda: 200 KHz**  
 - **Relación señal a ruido (SNR):**  
 
 ### **Captura de señal en 96.9 MHz (Instante 1)**  
 ![Señal en 96.9 MHz - Instante 1](FM969.jpg)  
 
 - **Potencia de transmisión:**  
-- **Ancho de banda:**  
+- **Ancho de banda:100 KHz**  
 - **Relación señal a ruido (SNR):**  
 
 ### **Captura de señal en 96.9 MHz (Instante 2)**  
