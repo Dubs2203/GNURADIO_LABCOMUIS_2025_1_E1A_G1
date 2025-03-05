@@ -165,8 +165,17 @@ Se ha aplicado un desplazamiento en la frecuencia de la señal, lo que genera un
 ### Cálculo de parametros para otra respuesta en frecuencia
 ![Respuesta en frecuencia de una señal triangular](Triang.jpg)
 
-Para calcular el piso de ruido normalizado a la frecuencia portadora, primero se estima una aproximación del nivel de ruido en el espectro, que en este caso fue de -115 dBm. Una vez obtenido el nivel de ruido, se normaliza a 1 Hz. 
-$P_{\text{noise normalizado}} = P_{\text{noise}} - 10 \cdot \log_{10}(RBW)$
+Para calcular el piso de ruido normalizado a la frecuencia portadora, primero se estima una aproximación del nivel de ruido en el espectro, que en este caso fue de -115 dBm. Una vez obtenido el nivel de ruido, se normaliza a 1 Hz utilizando un ancho de banda de resolución (RBW) de 300 Hz.
+
+$P_{\text{ruido normalizado}} = P_{\text{noise}} - 10 \cdot \log_{10}(RBW)$
+
+$P_{\text{ruido normalizado}} = -115 - 24.77 \approx -139.77 \, \text{dBm/Hz}$
+
+Ahora, teniendo el ruido normalizado, se procede a calcular el piso de ruido normalizado, para lo cual se utiliza una potencia portadora de -70 dBm.
+
+$L(f) = P_{\text{portadora}} - P_{\text{ruido normalizado}}$
+
+$L(f) = -70 - (-139.77) = 69.77 \, \text{dBc/Hz}$
 
 #### FALTA POTENCIA, PISO DE RUIDO Y SNR para la seno y triangular
 
