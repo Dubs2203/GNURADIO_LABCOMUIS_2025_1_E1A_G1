@@ -170,31 +170,31 @@ Para calcular el piso de ruido normalizado a la frecuencia portadora, primero se
 
 $P_{\text{ruido normalizado}} = P_{\text{ruido}} - 10 \cdot \log_{10}(RBW)$
 
-$P_{\text{ruido normalizado}} = -115 - 24.77 \approx -139.77 \ \text{[dBm/Hz]}$
+$P_{\text{ruido normalizado}} = -115 - 24.77 \approx -139.77 \ \text{dBm/Hz}$
 
 Ahora, teniendo el ruido normalizado, se procede a calcular el piso de ruido normalizado, para lo cual se utiliza una potencia portadora de -70 dBm.
 
 $L(f) = P_{\text{portadora}} - P_{\text{ruido normalizado}}$
 
-$L(f) = -70 - (-139.77) = 69.77 \ \text{[dBc/Hz]}$
+$L(f) = -70 - (-139.77) = 69.77 \ \text{dBc/Hz}$
 
 #### -Potencia de la señal
 Para el cálculo de la potencia, se observa que en el espectro el valor más alto del pico es de -70 dBm.
 
 $P(W) = 10^{\frac{P(\text{dBm}) - 30}{10}}$
 
-$P(W) = 10^{\frac{-70 - 30}{10}} = 10^{\frac{-100}{10}} = 0.1 \ \text{[nW]}$
+$P(W) = 10^{\frac{-70 - 30}{10}} = 10^{\frac{-100}{10}} = 0.1 \ \text{nW}$
 
 #### -Ancho de banda
 Para determinar el ancho de banda, se miden las frecuencias $f_{\text{max}}$ y $f_{\text{min}}$ que delimitan el pico de la señal, y a través de una resta se obtiene el ancho de banda. En este caso, $f_{\text{min}}$ tiene un valor de 49.999 MHz y $f_{\text{max}}$ un valor de 50.001 MHz, por lo que el ancho de banda corresponde a 2 kHz.
 
 Replicando los calculos anteriores pero ahora aplicados para nuestra señal seno tenemos los siguientes resulados:
 
-$P_{\text{ruido normalizado}} = -134.77 \ \text{[dBm/Hz]}$
+$P_{\text{ruido normalizado}} = -134.77 \ \text{dBm/Hz}$
 
-$L(f) = 74.77 \ \text{[dBc/Hz]}$
+$L(f) = 74.77 \ \text{dBc/Hz}$
 
-$P(W) = 1 \ \text{[nW]}$
+$P(W) = 1 \ \text{nW}$
 
 ${\text{Ancho de banda}} = 2 \ \text{kHz}$
 
@@ -203,9 +203,21 @@ Se realizó un análisis del espectro de señales FM utilizando el analizador de
 ### **Captura de señal en 96.7 MHz**  
 ![Señal en 91.7 MHz](FM917.jpg)  
 
-- **Potencia de transmisión:**  
+Para calcular la potencia de transmisión de la señal FM, se toma la medida de potencia del analizador de espectros, que en este caso arroja aproximadamente -103.43 dBm. Sin embargo, dado que se utiliza un RBW (ancho de banda de resolución) de 30 Hz, esto indica que la potencia se está midiendo en un ancho de banda muy estrecho, por lo que es necesario aplicar un factor de corrección a la potencia utilizando el ancho de banda de la señal FM.
+
+$P_{total} = P_{RBW} + 10 \log\left(\frac{Ancho de Banda}{RBW}\right)$
+
+$P_{total} \approx -103.43 + 38.24 \approx -65.19 \ \text{dBm}$
+
+Esta misma operación debe realizarse para calcular el nivel de ruido. Por lo tanto, si el espectro proporciona un nivel de ruido de aproximadamente -120 dBm, se determina que $P_{ruido}$ es de -81.76 dBm, con lo que ya se podrá calcular el SNR.
+
+$\text{SNR (dB)} = P_{\text{señal}} - P_{\text{ruido}}$
+
+$\text{SNR} = -65.19 - (-81.76) = 16.57 \ \text{dB}$
+
+- **Potencia de transmisión: 302.69 pW**  
 - **Ancho de banda: 200 KHz**  
-- **Relación señal a ruido (SNR):**  
+- **Relación señal a ruido (SNR): 16.57 dB**  
 
 ### **Captura de señal en 96.9 MHz (Instante 1)**  
 ![Señal en 96.9 MHz - Instante 1](FM969.jpg)  
