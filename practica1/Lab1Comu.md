@@ -255,9 +255,17 @@ Un cambio de frecuencia en la señal transmitida representa la misma variación 
 ![Cambio en frecuencia](Senfrec.jpg)
 
 ## Actividad 4: Análisis de Resultados y Conclusiones
+### Comparacion de resultados
+En la simulación con GNU Radio, las señales fueron generadas y modificadas en un entorno ideal sin ruido ni pérdidas. Sin embargo, en la transmisión real con el USRP 2920, la potencia medida resultó menor debido a las atenuaciones y el ruido presentes en el canal.
 
-# Conclusiones
-Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
+Las mediciones realizadas con un osciloscopio permitieron analizar la señal en el dominio del tiempo, observando cambios en la amplitud y la frecuencia. Por otro lado, el uso de un analizador de espectros facilitó la evaluación de la potencia, el ancho de banda y la relación señal-ruido (SNR).
+### Reflexion sobre la SNR:
+La relación señal-ruido (SNR) es fundamental en las comunicaciones inalámbricas, ya que determina la calidad de la señal recibida. Una SNR alta permite una mejor transmisión con menos errores, mientras que una SNR baja puede provocar interferencias y pérdida de datos. 
+
+El piso de ruido influye directamente en la capacidad de detectar señales débiles, ya que si es demasiado alto, las señales de baja potencia quedan ocultas, reduciendo la sensibilidad del receptor y afectando la comunicación efectiva.
+
+### Conclusiones
+El laboratorio permitió comprender el comportamiento de las señales en el dominio del tiempo y la frecuencia, comparando los resultados obtenidos en simulación y en transmisión real. Se evidenció que, aunque la simulación en GNU Radio proporciona un entorno ideal sin interferencias, la transmisión con el USRP 2920 está sujeta a efectos como atenuación, ruido y variaciones en la potencia de la señal. Además, se analizó la relación señal-ruido (SNR) como un factor determinante en la recepción y calidad de las señales inalámbricas, destacando cómo el piso de ruido influye en la detección de señales débiles.
 
 ### Referencias
 -J. Proakis y M. Salehi, Fundamentals of Communication Systems, 2ª ed. Inglaterra: Pearson Education Limited, 2014, pp. 164-165, 346, cap. 5. [En línea]. Disponible: https://uis.primo.exlibrisgroup.com/permalink/57UIDS_INST/63p0of/cdi_askewsholts_vlebooks_9781292015699.
