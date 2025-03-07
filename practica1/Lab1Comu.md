@@ -49,6 +49,9 @@ En un laboratorio de comunicaciones, herramientas como GNU Radio ofrecen un ento
 
 ## Actividad 1: Revisión de Especificaciones de los Equipos
 
+## **Objetivo** 
+Familiarizarse con las especificaciones técnicas de los equipos de laboratorio y entender cómo configurarlos para realizar mediciones.
+
 #### USRP -2920 
 Es un transceptor de RF ajustable con un convertidor analogico-digital de alta 
 velocidad y un convertidor digital-analogico para la transmision de señales de 
@@ -111,7 +114,6 @@ Ancho de banda de resolución de hasta 1Hz
 
 ## **Objetivo**  
 Generar y analizar señales en GNU Radio para entender cómo se comportan diferentes formas de onda en los dominios del tiempo y la frecuencia.  
-
 ## **Evidencias**  
 A continuación, se presentan capturas de pantalla de las señales analizadas:
 
@@ -145,6 +147,9 @@ Configuración final de la señal senoidal después de todas las modificaciones.
 
 
 ## Actividad 3: Transmisión y Medición de Señales con el USRP 2920
+
+## **Objetivo** 
+Transmitir señales usando el USRP 2920 y medir parámetros clave como potencia, ancho de banda, piso de ruido y relación señal a ruido (SNR).
 
 ### **1. Señal Original**  
 Se observa la señal original antes de aplicar modificaciones.  
@@ -248,13 +253,20 @@ Se ha modificado la amplitud de la señal al doble, lo que muestra que también 
 ### **3. Cambio en la Frecuencia**  
 Un cambio de frecuencia en la señal transmitida representa la misma variación en la señal observada en el osciloscopio, donde se aprecia que la frecuencia se ha aumentado al doble.
 ![Cambio en frecuencia](Senfrec.jpg)
+
+## Actividad 4: Análisis de Resultados y Conclusiones
+
 # Conclusiones
 Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
 
 ### Referencias
-Ejemplo de referencia:
+-J. Proakis y M. Salehi, Fundamentals of Communication Systems, 2ª ed. Inglaterra: Pearson Education Limited, 2014, pp. 164-165, 346, cap. 5. [En línea]. Disponible: https://uis.primo.exlibrisgroup.com/permalink/57UIDS_INST/63p0of/cdi_askewsholts_vlebooks_9781292015699.
 
-- [Proakis, 2014] J. Proakis, M. Salehi. Fundamentals of communication systems. 2 ed. England: Pearson Education Limited, 2014. p. 164-165, 346. Chapter 5 In: [Biblioteca UIS](https://uis.primo.exlibrisgroup.com/permalink/57UIDS_INST/63p0of/cdi_askewsholts_vlebooks_9781292015699)
+-National Instruments, "USRP-2920 Specifications," National Instruments, [En línea]. Disponible: https://www.ni.com/docs/en-US/bundle/usrp-2920-specs/page/specs.html.
+
+-Rohde & Schwarz, "R&S®RTB2000 Oscilloscope Specifications," Rohde & Schwarz, [En línea]. Disponible: https://www.rohde-schwarz.com/lat/productos/prueba-y-medicion/osciloscopios/rs-rtb2000-oscilloscope_63493-266306.html.
+
+-Rohde & Schwarz, "R&S®FPC Spectrum Analyzer Data Sheet," Rohde & Schwarz, [En línea]. Disponible: https://scdn.rohde-schwarz.com/ur/pws/dl_downloads/dl_common_library/dl_brochures_and_datasheets/pdf_1/FPC_dat-sw_en_5214-7112-22_v0600.pdf.
 
 ---
 
