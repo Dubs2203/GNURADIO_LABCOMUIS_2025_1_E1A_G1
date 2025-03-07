@@ -200,7 +200,7 @@ ${\text{Ancho de banda}} = 2 \ \text{kHz}$
 
 Se realizó un análisis del espectro de señales FM utilizando el analizador de espectros. Se conectó una antena adecuada a la entrada del analizador para ver señales en el rango de 88 MHz a 108 MHz. Se midieron la frecuencia central, el ancho de banda y la potencia de transmisión de dos estaciones diferente. También se analizó la variación en la respuesta en frecuencia del canal.
 
-### **Captura de señal en 96.7 MHz**  
+### **Captura de señal en 91.7 MHz**  
 ![Señal en 91.7 MHz](FM917.jpg)  
 
 Para calcular la potencia de transmisión de la señal FM, se toma la medida de potencia del analizador de espectros, que en este caso arroja aproximadamente -103.43 dBm. Sin embargo, dado que se utiliza un RBW (ancho de banda de resolución) de 30 Hz, esto indica que la potencia se está midiendo en un ancho de banda muy estrecho, por lo que es necesario aplicar un factor de corrección a la potencia utilizando el ancho de banda de la señal FM.
@@ -222,18 +222,21 @@ $\text{SNR} = -65.19 - (-81.76) = 16.57 \ \text{dB}$
 ### **Captura de señal en 96.9 MHz (Instante 1)**  
 ![Señal en 96.9 MHz - Instante 1](FM969.jpg)  
 
-- **Potencia de transmisión:**  
-- **Ancho de banda:100 KHz**  
-- **Relación señal a ruido (SNR):**  
+- **Potencia de transmisión: 1.05 nW**  
+- **Ancho de banda: 100 KHz**  
+- **Relación señal a ruido (SNR): 30 dB**  
 
 ### **Captura de señal en 96.9 MHz (Instante 2)**  
 ![Señal en 96.9 MHz - Instante 2](FM9692.jpg)  
 
-- **Potencia de transmisión:**  
-- **Ancho de banda:**  
-- **Relación señal a ruido (SNR):**  
+Para el cálculo de la potencia de este espectro, se realizó el cálculo de la potencia en los picos principales y se sumó la potencia en escala lineal.
+
+- **Potencia de transmisión: 237.6 pW**  
+- **Ancho de banda: 100 KHz**  
+- **Relación señal a ruido (SNR): 20.52 dB**  
 
 ###  Medición con el osciloscopio
+Se visualizó una señal sinusoidal con la ayuda del osciloscopio.
 
 
 
