@@ -237,9 +237,17 @@ Para el cálculo de la potencia de este espectro, se realizó el cálculo de la 
 
 ###  Medición con el osciloscopio
 Se visualizó una señal sinusoidal con la ayuda del osciloscopio.
+### **1. Señal Original**
+Se observa la señal original antes de aplicar modificaciones.  
+![Señal original - Onda Seno](Senorigi.jpg)
 
+### **2. Cambio en la Amplitud**  
+Se ha modificado la amplitud de la señal, lo que afecta la potencia de la misma en el espectro.  
+![Cambio en amplitud](Senamp.jpg)  
 
-
+### **3. Cambio en la Frecuencia y Fase**  
+El cambio en la fase de la señal no es visible en el dominio de la frecuencia, ya que el espectro muestra solo la magnitud. Sin embargo, una variación en la fase podría afectar la coherencia con otras señales, mientras que en la frecuencia podemos observar cómo los picos de la señal senoidal se corren hacia la freq seleccionada  
+![Cambio en frecuencia](Senfrec.jpg)
 # Conclusiones
 Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
 
