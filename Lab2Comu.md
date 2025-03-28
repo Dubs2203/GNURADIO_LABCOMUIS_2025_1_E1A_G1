@@ -6,7 +6,7 @@
 
 ### Integrantes
 - **DUBAN CORTÉS** - 2214644
-- **Elkin Lozada** - Código
+- **Elkin Lozada** - 2204219
 
 Escuela de Ingenaierías Eléctrica, Electrónica y de Telecomunicaciones  
 Universidad Industrial de Santander
@@ -74,14 +74,14 @@ En donde si suponemos que la señal original tiene una SNR infinita (Aproximadam
 ## Actividad 2: Fenómenos de canal en el osciloscopio 
 Se desactivaron los bloques correspondientes al USRP virtual, para luego enviar la señal de GNURadio al instrumento del laboratorio, manteniendo n=8 para el samp rate. Luego se partió de una frecuencia de 50M, y se ajustó el osciloscopio para su correcta visualización para ir variandola hasta 500M y observar su efecto en el canal.
 
-![Networking](practica2/50M.png)
+![Networking](practica2/50M.jpeg)
 
-![Networking](practica2/100M.png)
+![Networking](practica2/100M.jpeg)
 
-![Networking](practica2/200M.png)
+![Networking](practica2/200M.jpeg)
 Desde la frecuencia de 50MHz al ir aumentando se observa que la ganancia del USRP va disminuyendo a medida que esta aumenta, sin embargo ocurrió una anormalidad en la frecuencia de 200MHz que podría estar asociada a un fallo en el instrumento en determinada frecuencia o a alguno de los cables que pueda estar actuando como filtro. También se analizó los efectos vistos en la actividad 1, partiendo de una señal triangular de 1kHz, posteriormente cambiandola a 5kHz y variando su ruido. Es importante aclarar que el banco utilizado ha presentado fallas en el USRP generando señales muy distorsionadas e inestables.
 
-![Networking](practica2/500M.png)
+![Networking](practica2/500M.jpeg)
 
 Finalmente, se observa el efecto mencionado anteriormente con la ganancia, además de poder observar que la transmisión a frecuencias más altas reduce la calidad de la señal obdservada.
 
@@ -90,20 +90,21 @@ Se mantuvo la misma configuración de bloques del GNURadio de la acitividad 2, e
 
 Se inicio transmitiendo una señal triangular con una f de 1kHz y para realizar la comparación se desplazo a 3kHz y se aplicó un noise voltage de 0.3. 
 
-![Networking](practica2/originalc3.png)
+![Networking](practica2/originalc3.jpg)
 
 Podemos notar que los picos caen en un factor de 1/n^2, obteniendo un espectro más concentrado en bajas frecuencias. Adicional a esto, podemos verificar lo obtenido en el analizador de espectros reconstruyendo la señal a partir de su espectro de frecuencias.
 
-![Networking](practica2/codepython2.png)
+![Networking](practica2/Codepython2.png)
+
 También se puede observar que al subir el noise voltaje el nivel de piso de ruido sube en todo el espectro de frecuencias debido a su naturaleza gaussiana.
 
-![Networking](practica2/originalc31.png)
+![Networking](practica2/originalc31.jpg)
 
 Repitiendo el proceso con un tren de pulsos, observamos la relación de 1/n, pero con mayor contenido de altas frecuencias en comparación con la triangular. En presencia de ruido, la señal pulsada puede ser más sensible a la distorsión por interferencias.
 
-![Networking](practica2/originalt3.png)
+![Networking](practica2/originalt3.jpg)
 
-![Networking](practica2/originalt31.png)
+![Networking](practica2/originalt31.jpg)
 
 Al utilizar cables coaxiales largo se observa una mayor atenuación en altas frecuencias, debido a que la respuesta del cable es mejor en bajas frecuencias. El modelo adecuado para estas mediciones es algún modelo de línea de transmisión, mientras que con el uso de antenas el modelo que mejor describe el canal es el de pérdida en el espacio libre.
 
@@ -120,7 +121,6 @@ Al utilizar cables coaxiales largo se observa una mayor atenuación en altas fre
 - Se analizaron los retos que implica tener un nivel de ruido muy alto a la hora de reconstruir una señal y la importancia del muestreo a la hora de visualizar un mensaje.
 
 ### Referencias
-Ejemplo de referencia:
 
 - Scribd. (s.f.). GNU Radio. Scribd. https://es.scribd.com/document/183517250/Gnu-Radio
   
@@ -132,56 +132,10 @@ Ejemplo de referencia:
 
 
 ## Inclusión de Imágenes
-### Imagen de referencia dentro del repositorio:
-![Networking](my%20file/test.png)
 
-### Imagen de fuente externa
-![GNU Radio logo](https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png)
+Anexo del barrido en frecuencia para las frecuencias de 300M y 400M
 
-### Uso de html para cambiar escala de la imagen
-<img src="https://kb.ettus.com/images/thumb/5/50/gnuradio.png/600px-gnuradio.png" alt="GNU Radio Logo" width="300">
+![Networking](my%20file/300M.jpeg)
 
-## Creación de hipevínculos 
-- [Aprende Markdown](https://markdown.es/)
-- [Más acerca de Markdown](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
-- [Abrir documento en el repositorio](my%20file/test_file.txt). Si hay espacios en la ruta de su archivo, reemplácelos por `%20`.
-- Ir a una sección de este documento. Por ejemplo: [Ir a Contenido](#contenido) Tenga en cuenta escribir el título de la sección en minúsculas y los espacios reemplazarlos por guiones.
-## Uso de Expresiones Matemáticas
-Se pueden incluir ecuaciones en el archivo `README.md` utilizando sintaxis similar a [LaTeX](https://manualdelatex.com/tutoriales/ecuaciones):
+![Networking](practica2/400M.jpeg)
 
-### Ecuaciones en Línea
-```
-La energía de una señal exponencial es $E = \int_0^\infty A^2 e^{-2t/\tau} dt$.
-```
-**Salida renderizada:**
-La energía de una señal exponencial es $E = \int_0^\infty A^2 e^{-2t/\tau} dt$.
-
-### Ecuaciones en Bloque
-```
-$$E = \int_0^\infty A^2 e^{-2t/\tau} dt = \frac{A^2 \tau}{2}$$
-```
-**Salida renderizada**
-$$E = \int_0^\infty A^2 e^{-2t/\tau} dt = \frac{A^2 \tau}{2}$$
-
-## Creación de Tablas
-
-**Tabla 1.** Ejemplo de tabla en Markdown.
-
-| Parámetro | Valor |
-|-----------|-------|
-| Frecuencia (Hz) | 1000 |
-| Amplitud (V) | 5 |
-| Ciclo útil (%) | 50 |
-
-## Inclusión de código
-
-```python
-def hello_world():
-    print("Hello, World!")
-```
-
-También es posible resaltar texto tipo código como `print("Hello, World!")`.
-
----
-
-Volver al [INICIO](#laboratorio-de-comunicaciones)
