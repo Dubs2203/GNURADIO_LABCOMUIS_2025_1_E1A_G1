@@ -1,28 +1,18 @@
 # Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
 
-Utilice esta [plantilla](#integrantes) para presentar sus informes de laboratorio. 
 
-Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#ejemplos-usando-markdown)
-
-### Importante
-
-- En caso de utilizar herramientas de Inteligencia Artificial para asistencia en la redacción, análisis o cualquier otra tarea, de debe especificar en la sección de **Declaración de Originalidad y Responsabilidad** aclarando el alcance y propósito de su uso.
-- Cualquier omisión en la declaración del uso de IA o la presentación de contenido plagiado será penalizado con nota de 0.0 y reporte a la coordinación del programa.
-- Si emplea referencias disponibles en línea, agregue los hipervínculos respectivos.  
-
----
-# Práctica 1: TÍTULO PRÁCTICA
+# Práctica 2: Modelo del canal    
 
 ### Integrantes
-- **PRIMER INTEGRANTE** - Código
-- **SEGUNDO INTEGRANTE** - Código
+- **DUBAN CORTÉS** - 2214644
+- **Elkin Lozada** - Código
 
-Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones  
+Escuela de Ingenaierías Eléctrica, Electrónica y de Telecomunicaciones  
 Universidad Industrial de Santander
 
 ### Fecha
-31 de diciembre de 2030
+28 de marzo de 2025
 
 ---
 
@@ -37,29 +27,67 @@ Uso de IA: [Indicar si se usó IA y para qué aspectos específicos, por ejemplo
 ## Contenido
 
 ### Resumen
-Descripción en no más de 150 palabras del contenido de la práctica. Debe ser conciso y brindar una idea clara sobre el trabajo realizado y sus conclusiones.
+La práctica tiene cómo finalidad analizar cómo las caracteristicas del canal afectan la calidad de una señal que se transmite, además se evaluaran parámetros cómo 
+el SNR, Noise Floor, etc, para determinar la eficiencia de transmisión de datos. También será posible ver otros efectos que se producen y que son inherentes al canal, tales cómo el retardo, la atenuación o la distorsión consolidando lo visto teóricamente con lo práctico.
 
-**Palabras clave:** de 2 a 5 palabras clave. 
 
 ### Introducción
-Cada práctica contará con preguntas orientadoras para la elaboración de la introducción. Por ejemplo: 
-- ¿Qué tan importante es la teoría de muestreo en el procesamiento de señales?
-- ¿Cuáles son los principales potenciales de GNURADIO en el laboratorio de comunicaciones?
-- ¿Qué pasa cuando se alcanza el límite de Nyquist?
-- ¿Qué tan alta debe ser la relación entre la frecuencia de muestreo y la frecuencia de la señal para visualizar la señal correctamente?
-- ¿Cuándo es importante interpolar una señal?
-- ¿Cuándo es importante diezmar una señal?
-- ¿Qué pasa cuando se asigna una frecuencia de muestreo inadecuada?
+
+El filtrado de señales tiene un rol fundamental en la conservación de la calidad de la información que se transmite. Al suprimir las frecuencias elevadas, se disminuyen los elementos de alta frecuencia, lo que puede suavizar la señal pero también suprimir detalles cruciales, en particular en señales con componentes armónicos vitales para su adecuada reconstrucción. Mantener un filtrado excesivamente cerccano a la frecuencia fundamental puede distorsionar la forma de onda y modificar su espectro. En contraposición, el filtrado de bajas frecuencias suprime elementos de baja frecuencia, lo cual puede impactar en la envolvente de la señal y alterar su estructura global. La supresión de armónicos afecta principalmente a las señales periódicas, dado que estos elementos son los encargados de su forma distintiva; sin ellos, la señal podría perder su definición y tornarse irreconocible.
+
+El desvío de frecuencia en una señal captada puede generar cambios espectrales que impactan su adecuada interpretación, provocando interferencias o desajustes en los sistemas de demodulación. En estas situaciones, si los filtros no están adecuadamente diseñados, pueden alterar aún más la señal, empeorando la pérdida de información en vez de rectificarla. Adicionalmente, la degradación de la señal se intensifica a medida que se incrementa el nivel de ruido, lo cual puede medirse mediante indicadores como la relación entre señal y ruido (SNR). Para mejorar la relación señal a ruido, es posible emplear técnicas como filtrado adaptativo, amplificación selectiva o codificación de canal.
+
+La calidad de la señal recibida puede evaluarse utilizando diferentes criterios según el tipo de señal. En señales analógicas, se pueden analizar la relación señal a ruido y la distorsión armónica total (THD).
+
+Durante la práctica, se utilizarán equipos como el radio definido por software USRP 2920 y herramientas como GNU Radio para simular y analizar estos efectos en distintos escenarios, permitiendo una comprensión más profunda de la transmisión y recepción de señales en entornos reales.
+
 
 ### Procedimiento
-Debe basarse en las acciones efectivamente realizadas durante el laboratorio, describiendo los procesos realizados y los resultados obtenidos. Para cada práctica se pueden brindar preguntas orientadoras o pasos a seguir para establecer lo que se espera lograr/estudiar/analizar/obtener/comparar. Por ejemplo:
-- Describa los procesos realizados en el laboratorio  y los resultados obtenidos.
-- ¿Cómo se alcanza el límite de Nyquist y que pasa cuando se disminuye de este?
-- ¿Por qué al interpolar una señal en GNURADIO su frecuencia disminuye?
-- ¿Por qué al diezmar una señal en GNURADIO su frecuencia aumenta?
-- ¿Cómo se puede determinar la frecuencia máxima de una señal desde lo experimental?
-- ¿Qué le sucede a una señal de audio cuando no se respeta el teorema de Nyquist?
-- Describa las funciones logradas con el Ecualizador desarrollado con GNURadio.
+
+## Actividad 1: Actividades de simulación de canal en GNU Radio 
+
+Se configuro la frecuencia de muestreo para n=8, e inicialmente se analizó el efecto de variar las frecuencias de corte del filtro utilizando una señal triangular.
+
+#--Foto señal triangular 
+
+En la práctica, fue posible observar que a medida que la frecuencia de corte del filtro estaba más cercana a la frecuencia del mensaje, este se ve represntado más fielmente mientras que si aún está por debajo, pero cerca, la señal puede verse igual pero un poco atenuada.
+
+Además es posible observar que, en frecuencia desaparecen todos los armónicos que están por fuera de la frecuencia produciendo así un espectro de la señal mucho más limpio. Luego, se obtienen los mismos resultados con la frecuencia de una señal sinusoidal.
+
+#F21 - Freq
+#--F21 
+
+Analizando ahora los efectos del ruido, se configuró el flujograma para la reproducción de audio, y se aumentó el noise voltage hasta que fuera irreconocible el mismo, obteniendo así:
+
+#-- Umbral de freq sin ruido
+
+#-- Umbral de freq con ruido 
+
+#-- Umbral ruido tiempo
+
+Podemos ver que, cuando la amplitud de los armónicos del ruido son mayores a los de la misma señal, esta se vuelve imposible de reconstruir, además de que su forma en el tiempo se vuelve totalmente errante. 
+
+Para analizar la SNR antes y después de aplicar el ruido, se utilizó el siguiente código de python:
+
+#-Codepython
+
+En donde si suponemos que la señal original tiene una SNR infinita (Aproximadamente sin ruido), y con el cálculo después del ruido la SNR se reduce a 8.08 dB. Dado que la degradación es la diferendcia entre ambas SNR el resultado es infinito, lo que indica una pérdida total de la señal. 
+
+## Actividad 2: Fenómenos de canal en el osciloscopio 
+
+Se desactivaron los bloques correspondientes al USRP virtual, para luego enviar la señal de GNURadio al instrumento del laboratorio, manteniendo n=8 para el samp rate. Luego se partió de una frecuencia de 50M, y se ajustó el osciloscopio para su correcta visualización para ir variandola hasta 500M y observar su efecto en el canal.
+
+#-50M
+#-100M
+
+#-200M
+Desde la frecuencia de 50MHz al ir aumentando se observa que la ganancia del USRP va disminuyendo a medida que esta aumenta, sin embargo ocurrió una anormalidad en la frecuencia de 200MHz que podría estar asociada a un fallo en el instrumento en determinada frecuencia o a alguno de los cables que pueda estar actuando como filtro. También se analizó los efectos vistos en la actividad 1, partiendo de una señal triangular de 1kHz, posteriormente cambiandola a 5kHz y variando su ruido. Es importante aclarar que el banco utilizado ha presentado fallas en el USRP generando señales muy distorsionadas e inestables.
+
+#-500M
+
+Finalmente, se observa el efecto mencionado anteriormente con la ganancia, además de poder observar que la transmisión a frecuencias más altas reduce la calidad de la señal obdservada.
+
+## Actividad 3: Fenómenos de canal en el analizador de espectro 
 
 ### Conclusiones
 Se sintetizan los principales aportes y puntos relevantes de la práctica, evitando repetir lo ya consignado en las otras secciones del informe. 
