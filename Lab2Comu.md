@@ -45,7 +45,7 @@ Durante la práctica, se utilizarán equipos como el radio definido por software
 ## Actividad 1: Actividades de simulación de canal en GNU Radio 
 Se configuro la frecuencia de muestreo para n=8, e inicialmente se analizó el efecto de variar las frecuencias de corte del filtro utilizando una señal triangular.
 
-![Networking](my%20file/F1_NOffset.png)
+![Networking](practica2/F1_NOffset.png)
 
 En la práctica, fue posible observar que a medida que la frecuencia de corte del filtro estaba más cercana a la frecuencia del mensaje, este se ve represntado más fielmente mientras que si aún está por debajo, pero cerca, la señal puede verse igual pero un poco atenuada.
 
