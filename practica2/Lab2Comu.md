@@ -6,7 +6,7 @@
 
 ### Integrantes
 - **DUBAN CORTÉS** - 2214644
-- **Elkin Lozada** - 2204219
+- **ELKIN LOZADA** - 2204219
 
 Escuela de Ingenaierías Eléctrica, Electrónica y de Telecomunicaciones  
 Universidad Industrial de Santander
@@ -109,6 +109,9 @@ Repitiendo el proceso con un tren de pulsos, observamos la relación de 1/n, per
 
 Al utilizar cables coaxiales largo se observa una mayor atenuación en altas frecuencias, debido a que la respuesta del cable es mejor en bajas frecuencias. El modelo adecuado para estas mediciones es algún modelo de línea de transmisión, mientras que con el uso de antenas el modelo que mejor describe el canal es el de pérdida en el espacio libre.
 
+## Actividad 4: Efectos de los fenómenos de canal en la conversión de frecuencia
+
+Para esta actividad de laboratorio, se modificó la configuración de bloques en GNURadio con el fin de permitir la transmisión y recepción de la señal a través del USRP.
 
 
 ### Conclusiones
