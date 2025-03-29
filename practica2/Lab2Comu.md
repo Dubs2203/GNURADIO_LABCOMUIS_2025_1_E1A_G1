@@ -117,7 +117,7 @@ Para esta actividad de laboratorio, se modificó la configuración de bloques en
 
 Se inició la transmisión de una señal senoidal con una amplitud de 0.4 y una frecuencia de 4.1 kHz, observándose que la señal recibida difería de la señal transmitida.
 
-![Networking](Orinal4.png)
+![Networking](Original4.png)
 
 Al reducir el parámetro de ganancia del USRP a 2 dB, se observó una mejora en la recuperación de la señal, evidenciando una menor distorsión en la recepción.
 
