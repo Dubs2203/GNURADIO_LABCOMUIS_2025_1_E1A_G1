@@ -113,6 +113,19 @@ Al utilizar cables coaxiales largo se observa una mayor atenuación en altas fre
 
 Para esta actividad de laboratorio, se modificó la configuración de bloques en GNURadio con el fin de permitir la transmisión y recepción de la señal a través del USRP.
 
+![Networking](GNURadio.png)
+
+Se inició la transmisión de una señal senoidal con una amplitud de 0.4 y una frecuencia de 4.1 kHz, observándose que la señal recibida difería de la señal transmitida.
+
+![Networking](Orinal4.png)
+
+Al reducir el parámetro de ganancia del USRP a 2 dB, se observó una mejora en la recuperación de la señal, evidenciando una menor distorsión en la recepción.
+
+![Networking](4ganancia.png)
+
+Finalmente, al reducir la ganancia del USRP a 0 dB, disminuir la frecuencia de la señal a 1 kHz, ajustar el offset a 0.4 y establecer una frecuencia portadora de 100.1 MHz, se logró recuperar la señal transmitida, evidenciando una mejora en la fidelidad de la recepción.
+
+![Networking](4offset.png)
 
 ### Conclusiones
 
